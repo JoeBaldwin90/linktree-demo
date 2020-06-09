@@ -4,8 +4,7 @@ import "./App.css";
 
 const spaceID = process.env.REACT_APP_SPACE;
 const token = process.env.REACT_APP_TOKEN;
-const url =
-  `https://cdn.contentful.com/spaces/${spaceID}/environments/master/entries?access_token=${token}`;
+const url = `https://cdn.contentful.com/spaces/${spaceID}/environments/master/entries?access_token=${token}`;
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -13,7 +12,9 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios(url);
-      const links = response.data.items.map((link) => link.fields);
+      const links = response.data.items
+        .map((link) => link.fields)
+        .sort((a, b) => (a.order > b.order ? 1 : -1));
       setData(links);
     };
 
