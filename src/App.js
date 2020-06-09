@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-const spaceID = process.env.SPACE;
-const token = process.env.TOKEN;
+const spaceID = process.env.REACT_APP_SPACE;
+const token = process.env.REACT_APP_TOKEN;
 const url =
   `https://cdn.contentful.com/spaces/${spaceID}/environments/master/entries?access_token=${token}`;
 
