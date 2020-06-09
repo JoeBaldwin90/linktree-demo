@@ -1,0 +1,154 @@
+// Colors  
+$black: #111111;
+$white: #F1F1F1;
+$primary: #FFCBAA;
+$primaryHighlight: #FDE1D0;
+
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Sarina&display=swap");
+$title: 'Sarina',cursive;
+$copy: 'Oswald', sans-serif;
+
+body {
+    max-width: 450px;
+    font-size: 16px;
+    line-height: 1.2;
+    font-family: $copy;
+    font-weight: 200;
+    text-align: center;
+    padding: 2em 0;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: $primary;
+    background-image: url("../assets/background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1em 5px;
+    grid-auto-flow: dense;
+}
+
+// Title / Handle
+div.title {
+    text-align: center;
+    grid-column: 3 / span 8;
+}
+
+h1 {
+    color: $white;
+    font-size: 2em;
+    font-family: $title;
+    text-shadow: #000000 0px 0px 1px, #00000075 -1px -1px 0px;
+    max-width: 340px;
+    margin: 0;
+}
+
+// Profile image
+div.profile-image {
+    grid-column: 4 / span 6;
+}
+
+img.profile {
+    width: 100%;
+    transform: scale(0.7);
+    animation: grow;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+// Links container
+div.links {
+    grid-column: 3 / span 8;
+    animation: slideUp;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    grid-column: 3 / span 8;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+a {
+    display: block;
+    font-size: 1.25em;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $black;
+    padding: 0.5em 1em;
+    background-color: #FFCBAA90;
+    border: solid 3px $white;
+    border-radius: 7px;
+    box-shadow: #00000050 1px 1px 1px;
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: $primaryHighlight;
+    }
+}
+
+// "Highlighted" link styles
+a.highlight {
+    animation: twitch;
+    animation-duration: 250ms;
+    animation-delay: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+}
+
+// Animations
+@keyframes grow {
+    from {
+        transform: scale(0.7)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes twitch {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(-3deg);
+    }
+
+    75% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
