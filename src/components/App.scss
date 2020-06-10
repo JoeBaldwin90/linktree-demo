@@ -1,26 +1,25 @@
 // Colors  
 $black: #111111;
-$white: #F1F1F1;
+$white: #FFFFFF;
 $primary: #FFCBAA;
 $primaryHighlight: #FDE1D0;
 
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Sarina&display=swap");
-$title: 'Sarina',cursive;
-$copy: 'Oswald', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+// $title: 'Sarina', cursive;
+$copy: 'Roboto', sans-serif;
 
 body {
     max-width: 450px;
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 20px;
+    line-height: 1.1;
     font-family: $copy;
-    font-weight: 200;
+    font-weight: 300;
     text-align: center;
-    padding: 2em 0;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: $primary;
-    background-image: url("../assets/background.png");
+    background-color: $white;
+    background-image: url("http://pipparoselifestyle.com/wp-content/uploads/2020/06/Childs-1707-03009-scaled.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,43 +28,33 @@ body {
 section.container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1em 5px;
+    grid-gap: 25vh 5px;
     grid-auto-flow: dense;
+    padding-top: 5vh;
+    margin: 0 24px;
 }
 
-// Title / Handle
-div.title {
-    text-align: center;
-    grid-column: 3 / span 8;
-}
-
-h1 {
-    color: $white;
-    font-size: 2em;
-    font-family: $title;
-    text-shadow: #000000 0px 0px 1px, #00000075 -1px -1px 0px;
-    max-width: 340px;
-    margin: 0;
-}
-
-// Profile image
-div.profile-image {
+// Title / Logo
+div.logo {
     grid-column: 4 / span 6;
-}
-
-img.profile {
-    width: 100%;
-    transform: scale(0.7);
-    animation: grow;
-    animation-duration: 1s;
+    animation: fadeGrow;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
     animation-fill-mode: forwards;
+
+    img {
+        width: 100%;
+    }
 }
 
 // Links container
 div.links {
-    grid-column: 3 / span 8;
-    animation: slideUp;
-    animation-duration: 1s;
+    grid-column: span 12;
+    opacity: 0;
+    animation: fadeGrow;
+    animation-duration: 1.5s;
+    animation-delay: .5s;
     animation-fill-mode: forwards;
 }
 
@@ -74,30 +63,40 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
-    grid-column: 3 / span 8;
+    grid-column: span 12;
 }
 
 li {
     margin-bottom: 1em;
+    position: relative;
+}
+
+// Glassy button blur
+div.blur {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    // backdrop-filter: blur(5px);
+    z-index: -1;
+    transition: background-color 150ms ease;
 }
 
 a {
     display: block;
-    font-size: 1.25em;
-    line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    color: $black;
+    color: $white;
     padding: 0.5em 1em;
-    background-color: #FFCBAA90;
-    border: solid 3px $white;
-    border-radius: 7px;
+    border: solid 1px $white;
+    border-radius: 5px;
     box-shadow: #00000050 1px 1px 1px;
 
-    &:hover,
-    &:active,
-    &:focus {
-        background-color: $primaryHighlight;
+    &:hover+div.blur,
+    &:active+div.blur,
+    &:focus+div.blur {
+        background-color: rgba(255, 255, 255, 0.35);
     }
 }
 
@@ -111,23 +110,15 @@ a.highlight {
 }
 
 // Animations
-@keyframes grow {
+@keyframes fadeGrow {
     from {
-        transform: scale(0.7)
+        opacity: 0;
+        transform: scale(0.85)
     }
 
     to {
+        opacity: 1;
         transform: scale(1)
-    }
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(100%);
-    }
-
-    to {
-        transform: translateY(0%);
     }
 }
 
@@ -137,15 +128,15 @@ a.highlight {
     }
 
     25% {
-        transform: rotate(3deg);
+        transform: rotate(1deg);
     }
 
     50% {
-        transform: rotate(-3deg);
+        transform: rotate(-1deg);
     }
 
     75% {
-        transform: rotate(3deg);
+        transform: rotate(1deg);
     }
 
     100% {

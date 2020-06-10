@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import sophie from "../assets/sophie.png";
+import logo from '../assets/logo.png';
 import "./App.scss";
 
 const spaceID = process.env.REACT_APP_SPACE;
@@ -24,28 +24,22 @@ const App = () => {
 
   return (
     <div>
-      <section class='container'>
-        <div class='profile-image'>
-          <img
-            class='profile'
-            src={sophie}
-            alt='Sophie Anneliese - London Photographer'
-          />
+      <section className='container'>
+        <div className='logo'>
+          <img src={logo} className="Logo" />
         </div>
-        <div class='title'>
-          <h1>Sophie Anneliese</h1>
-        </div>
-        <div class='links'>
+        <div className='links'>
           <ul>
             {data.map((link) => (
               <li>
                 <a
                   href={link.url}
                   alt={link.title}
-                  class={link.highlight ? "highlight" : null}
+                  className={link.highlight ? "highlight" : null}
                 >
                   {link.title}
                 </a>
+                <div class="blur"></div>
               </li>
             ))}
           </ul>
