@@ -3,6 +3,7 @@ $black: #111111;
 $white: #F1F1F1;
 $primary: #22222220;
 $primaryHighlight: #f2f2f240;
+$background: rgb(245, 238, 226);
 
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
@@ -13,7 +14,7 @@ sans-serif;
 
 body {
     max-width: 450px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.2;
     font-family: $copy;
     font-weight: 300;
@@ -107,6 +108,13 @@ a.highlight {
     animation-iteration-count: 2;
 }
 
+// Responsive styles
+@media (max-width: 350px) {
+    body {
+        font-size: 16px;
+    }
+}
+
 // Animations
 @keyframes grow {
     from {
@@ -123,10 +131,12 @@ a.highlight {
 @keyframes fadeIn {
     from {
         opacity: 0;
+        transform: translateY(0.25em);
     }
 
     to {
         opacity: 1;
+        transform: translateY(0em);
     }
 }
 
