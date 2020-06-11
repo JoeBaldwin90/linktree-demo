@@ -30,8 +30,6 @@ const App = () => {
       <video
         autoPlay={true}
         loop={true}
-        preload='auto'
-        playsInline
         muted
         className='video'
         poster={bgImg}
