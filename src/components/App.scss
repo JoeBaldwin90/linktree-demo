@@ -15,7 +15,7 @@ sans-serif;
 body {
     max-width: 450px;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.1;
     font-family: $copy;
     font-weight: 300;
     text-align: center;
@@ -107,6 +107,7 @@ a.highlight {
     animation-timing-function: ease-in-out;
     animation-iteration-count: 2;
 }
+
 
 // Responsive styles
 @media (max-width: 350px) {
