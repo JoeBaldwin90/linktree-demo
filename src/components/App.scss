@@ -21,7 +21,7 @@ body {
     text-align: center;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: $primary;
+    background-color: $white;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,12 +36,12 @@ section.container {
 }
 
 // Video 
-img.video {
+video.video {
     position: fixed;
-    left: 0;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
     z-index: -1;
-    width: 100%;
-    min-height: 100%;
 }
 
 // Profile image
