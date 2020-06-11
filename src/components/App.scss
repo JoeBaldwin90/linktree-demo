@@ -48,6 +48,12 @@ video.video {
 div.profile-image {
     grid-column: 4 / span 6;
     padding-top: 2em;
+    animation: float;
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
 }
 
 img.profile {
@@ -127,6 +133,16 @@ a.highlight {
     to {
         opacity: 1;
         transform: scale(1)
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0)
+    }
+
+    to {
+        transform: translateY(4px)
     }
 }
 
