@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import sophie from "../assets/sophie.png";
+import logo from "../assets/danlogo.png";
 import "./App.scss";
 
-const spaceID = process.env.REACT_APP_SPACE;
-const token = process.env.REACT_APP_TOKEN;
+const spaceID = process.env.REACT_APP_ID;
+const token = process.env.REACT_APP_KEY;
 const url = `https://cdn.contentful.com/spaces/${spaceID}/environments/master/entries?access_token=${token}`;
 
 const App = () => {
@@ -24,31 +24,30 @@ const App = () => {
 
   return (
     <div>
-      <section class='container'>
-        <div class='profile-image'>
+      <section className='container'>
+        <div className='logo'>
           <img
-            class='profile'
-            src={sophie}
-            alt='Sophie Anneliese - London Photographer'
+            src={logo}
+            alt='Swallow Timeberworks'
           />
         </div>
-        <div class='title'>
-          <h1>Sophie Anneliese</h1>
-        </div>
-        <div class='links'>
+        <div className='links'>
           <ul>
-            {data.map((link) => (
-              <li>
+            {data.map((link, i) => (
+              <li key={i}>
                 <a
                   href={link.url}
                   alt={link.title}
-                  class={link.highlight ? "highlight" : null}
+                  className={link.highlight ? "highlight" : null}
                 >
                   {link.title}
                 </a>
               </li>
             ))}
           </ul>
+        </div>
+        <div className="handle">
+          <p>@swallow_timberworks</p>
         </div>
       </section>
     </div>

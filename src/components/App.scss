@@ -1,72 +1,68 @@
 // Colors  
 $black: #111111;
 $white: #F1F1F1;
-$primary: #FFCBAA;
-$primaryHighlight: #FDE1D0;
+$primary: #04455790;
+$primaryHighlight: #0C647C90;
 
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Sarina&display=swap");
-$title: 'Sarina',cursive;
-$copy: 'Oswald', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+$title: 'Raleway',
+sans-serif;
+$copy: 'Raleway',
+sans-serif;
 
 body {
     max-width: 450px;
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 20px;
+    line-height: 1.1;
     font-family: $copy;
-    font-weight: 200;
     text-align: center;
-    padding: 2em 0;
     margin: 0 auto;
     min-height: 100vh;
     background-color: $primary;
-    background-image: url("../assets/background.png");
+    background-image: url("../assets/chips.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+@media (min-width: 425px) {
+    body {
+        background-size: contain
+    };
+}
+
 section.container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1em 5px;
-    grid-auto-flow: dense;
-}
-
-// Title / Handle
-div.title {
-    text-align: center;
-    grid-column: 3 / span 8;
-}
-
-h1 {
-    color: $white;
-    font-size: 2em;
-    font-family: $title;
-    text-shadow: #000000 0px 0px 1px, #00000075 -1px -1px 0px;
-    max-width: 340px;
-    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 24px;
 }
 
 // Profile image
-div.profile-image {
-    grid-column: 4 / span 6;
+div.logo {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-flow: dense;
+    padding-top: 1em;
+
+    img {
+        grid-column: 1 / span 4;
+        transform: scale(0.7);
+        animation: grow;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
 }
 
-img.profile {
-    width: 100%;
-    transform: scale(0.7);
-    animation: grow;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-}
 
 // Links container
 div.links {
-    grid-column: 3 / span 8;
     animation: slideUp;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+    margin: 0 0 1em 0;
 }
 
 ul,
@@ -74,25 +70,22 @@ li {
     list-style: none;
     margin: 0;
     padding: 0;
-    grid-column: 3 / span 8;
 }
 
 li {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
 }
 
 a {
     display: block;
-    font-size: 1.25em;
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    color: $black;
+    color: $white;
     padding: 0.5em 1em;
-    background-color: #FFCBAA90;
-    border: solid 3px $white;
-    border-radius: 7px;
-    box-shadow: #00000050 1px 1px 1px;
+    background-color: $primary;
+    border: solid 3px #ffffff85;
+    border-radius: 10px;
 
     &:hover,
     &:active,
@@ -110,23 +103,38 @@ a.highlight {
     animation-iteration-count: 2;
 }
 
+// Handle
+div.handle {
+    margin-bottom: 10vh;
+
+    p {
+        color: $white;
+        text-transform: uppercase;
+        margin: 0 auto;
+    }
+}
+
 // Animations
 @keyframes grow {
     from {
+        opacity: 0;
         transform: scale(0.7)
     }
 
     to {
+        opacity: 1;
         transform: scale(1)
     }
 }
 
 @keyframes slideUp {
     from {
+        opacity: 0;
         transform: translateY(100%);
     }
 
     to {
+        opacity: 1;
         transform: translateY(0%);
     }
 }
