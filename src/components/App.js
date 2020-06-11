@@ -29,7 +29,6 @@ const App = () => {
       <video
         autoPlay={true}
         loop={true}
-        controls={true}
         preload='auto'
         playsInline
         muted
