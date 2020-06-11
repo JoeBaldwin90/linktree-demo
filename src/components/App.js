@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import sophie from "../assets/sophie.png";
+import bg from "../assets/bg.mp4";
+import logo from "../assets/logo.png";
 import "./App.scss";
 
 const spaceID = process.env.REACT_APP_SPACE;
@@ -24,25 +25,26 @@ const App = () => {
 
   return (
     <div>
-      <section class='container'>
-        <div class='profile-image'>
+      <video src={bg} autoPlay={true} loop={true} className='video'></video>
+      <section className='container'>
+        <div className='profile-image'>
           <img
-            class='profile'
-            src={sophie}
-            alt='Sophie Anneliese - London Photographer'
+            className='profile'
+            src={logo}
+            alt='Nitara'
           />
         </div>
-        <div class='title'>
+        {/* <div class='title'>
           <h1>Sophie Anneliese</h1>
-        </div>
-        <div class='links'>
+        </div> */}
+        <div className='links'>
           <ul>
-            {data.map((link) => (
-              <li>
+            {data.map((link, i) => (
+              <li key={i}>
                 <a
                   href={link.url}
                   alt={link.title}
-                  class={link.highlight ? "highlight" : null}
+                  className={link.highlight ? "highlight" : null}
                 >
                   {link.title}
                 </a>

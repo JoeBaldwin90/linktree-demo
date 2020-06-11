@@ -6,21 +6,21 @@ $primaryHighlight: #FDE1D0;
 
 // Fonts
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Sarina&display=swap");
-$title: 'Sarina',cursive;
-$copy: 'Oswald', sans-serif;
+$title: 'Sarina',
+cursive;
+$copy: 'Oswald',
+sans-serif;
 
 body {
     max-width: 450px;
     font-size: 16px;
     line-height: 1.2;
     font-family: $copy;
-    font-weight: 200;
+    font-weight: 300;
     text-align: center;
-    padding: 2em 0;
     margin: 0 auto;
     min-height: 100vh;
     background-color: $primary;
-    background-image: url("../assets/background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,19 +33,13 @@ section.container {
     grid-auto-flow: dense;
 }
 
-// Title / Handle
-div.title {
-    text-align: center;
-    grid-column: 3 / span 8;
-}
-
-h1 {
-    color: $white;
-    font-size: 2em;
-    font-family: $title;
-    text-shadow: #000000 0px 0px 1px, #00000075 -1px -1px 0px;
-    max-width: 340px;
-    margin: 0;
+// Video 
+video.video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    z-index: -1;
 }
 
 // Profile image
