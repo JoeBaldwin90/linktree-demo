@@ -25,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <img src={bg} className='video'></img>
+      <img src={bg} className='video' />
       <section className='container'>
         <div className='profile-image'>
           <img className='profile' src={logo} alt='Nitara' />
