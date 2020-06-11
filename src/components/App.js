@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import sophie from "../assets/sophie.png";
+// import bg from "../assets/bg.mp4";
+// import logo from "../assets/logo.png";
 import "./App.scss";
 
 const spaceID = process.env.REACT_APP_SPACE;
@@ -26,7 +27,7 @@ const App = () => {
     <div>
       <section className='container'>
         <div className='profile-image'>
-          <img className='profile' src={sophie} alt='' />
+          <img className='profile' src="" alt='' />
         </div>
         <div className='title'>
           <h1>Page Title</h1>
