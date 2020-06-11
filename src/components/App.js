@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import bg from "../assets/bg.mp4";
+import bg from "../assets/bg.gif";
 import logo from "../assets/logo.png";
 import "./App.scss";
 
@@ -25,13 +25,7 @@ const App = () => {
 
   return (
     <div>
-      <video
-        src={bg}
-        autoPlay={true}
-        loop={true}
-        className='video'
-        muted
-      ></video>
+      <img src={bg} className='video'></img>
       <section className='container'>
         <div className='profile-image'>
           <img className='profile' src={logo} alt='Nitara' />
