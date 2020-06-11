@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import bg from "../assets/bg.mp4";
-// import logo from "../assets/logo.png";
+// import bg from "../assets/bg.png";
 import "./App.scss";
 
 const spaceID = process.env.REACT_APP_SPACE;
