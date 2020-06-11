@@ -34,10 +34,14 @@ const App = () => {
         playsInline
         muted
         className='video'
+        poster={bgImg}
       >
-        <source src={bg} type='video/mp4'></source>
-        <source src={bgWebm} type='video/webm'></source>
-        <img src={bgImg} />
+        >
+        <source
+          src={bg}
+          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'
+        ></source>
+        <source src={bgWebm} type='video/webm;codecs="vp8, vorbis"'></source>
       </video>
       <section className='container'>
         <div className='profile-image'>
