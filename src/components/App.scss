@@ -1,19 +1,19 @@
 // Colors  
 $black: #111111;
 $white: #F1F1F1;
-$primary: #FFCBAA;
-$primaryHighlight: #FDE1D0;
+$primary: #22222220;
+$primaryHighlight: #f2f2f240;
 
 // Fonts
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Sarina&display=swap");
-$title: 'Sarina',
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+$title: 'Roboto',
 cursive;
-$copy: 'Oswald',
+$copy: 'Roboto',
 sans-serif;
 
 body {
     max-width: 450px;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.2;
     font-family: $copy;
     font-weight: 300;
@@ -29,14 +29,14 @@ body {
 section.container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 1em 5px;
+    grid-gap: 30vh 5px;
     grid-auto-flow: dense;
+    margin: 0 24px;
 }
 
 // Video 
 video.video {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     position: fixed;
     left: 0;
     z-index: -1;
@@ -45,20 +45,24 @@ video.video {
 // Profile image
 div.profile-image {
     grid-column: 4 / span 6;
+    padding-top: 2em;
 }
 
 img.profile {
     width: 100%;
-    transform: scale(0.7);
+    opacity: 0;
     animation: grow;
+    animation-delay: .5s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 
 // Links container
 div.links {
-    grid-column: 3 / span 8;
-    animation: slideUp;
+    grid-column: span 12;
+    opacity: 0;
+    animation: fadeIn;
+    animation-delay: .5s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
@@ -72,21 +76,20 @@ li {
 }
 
 li {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
 }
 
 a {
     display: block;
-    font-size: 1.25em;
     line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
-    color: $black;
+    color: $white;
     padding: 0.5em 1em;
-    background-color: #FFCBAA90;
-    border: solid 3px $white;
+    background-color: $primary;
+    border: solid 2px $white;
     border-radius: 7px;
-    box-shadow: #00000050 1px 1px 1px;
+    box-shadow: #00000050 1px 1px 5px;
 
     &:hover,
     &:active,
@@ -107,21 +110,23 @@ a.highlight {
 // Animations
 @keyframes grow {
     from {
-        transform: scale(0.7)
+        opacity: 0;
+        transform: scale(0.85)
     }
 
     to {
+        opacity: 1;
         transform: scale(1)
     }
 }
 
-@keyframes slideUp {
+@keyframes fadeIn {
     from {
-        transform: translateY(100%);
+        opacity: 0;
     }
 
     to {
-        transform: translateY(0%);
+        opacity: 1;
     }
 }
 
@@ -131,15 +136,15 @@ a.highlight {
     }
 
     25% {
-        transform: rotate(3deg);
+        transform: rotate(1deg);
     }
 
     50% {
-        transform: rotate(-3deg);
+        transform: rotate(-1deg);
     }
 
     75% {
-        transform: rotate(3deg);
+        transform: rotate(1deg);
     }
 
     100% {

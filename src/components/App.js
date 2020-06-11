@@ -34,9 +34,6 @@ const App = () => {
             alt='Nitara'
           />
         </div>
-        {/* <div class='title'>
-          <h1>Sophie Anneliese</h1>
-        </div> */}
         <div className='links'>
           <ul>
             {data.map((link, i) => (
