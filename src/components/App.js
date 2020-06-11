@@ -25,14 +25,16 @@ const App = () => {
 
   return (
     <div>
-      <video src={bg} autoplay="true" loop="true" className='video'></video>
+      <video
+        src={bg}
+        autoPlay={true}
+        loop={true}
+        className='video'
+        muted
+      ></video>
       <section className='container'>
         <div className='profile-image'>
-          <img
-            className='profile'
-            src={logo}
-            alt='Nitara'
-          />
+          <img className='profile' src={logo} alt='Nitara' />
         </div>
         <div className='links'>
           <ul>
