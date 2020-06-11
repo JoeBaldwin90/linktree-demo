@@ -39,7 +39,7 @@ section.container {
 video.video {
     position: fixed;
     left: 50%;
-    height: 100%;
+    width: 100%;
     transform: translateX(-50%);
     z-index: -1;
 }
