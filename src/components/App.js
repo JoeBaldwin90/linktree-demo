@@ -24,25 +24,21 @@ const App = () => {
 
   return (
     <div>
-      <section class='container'>
-        <div class='profile-image'>
-          <img
-            class='profile'
-            src={sophie}
-            alt='Sophie Anneliese - London Photographer'
-          />
+      <section className='container'>
+        <div className='profile-image'>
+          <img className='profile' src={sophie} alt='' />
         </div>
-        <div class='title'>
-          <h1>Sophie Anneliese</h1>
+        <div className='title'>
+          <h1>Page Title</h1>
         </div>
-        <div class='links'>
+        <div className='links'>
           <ul>
-            {data.map((link) => (
-              <li>
+            {data.map((link, i) => (
+              <li key={i}>
                 <a
                   href={link.url}
                   alt={link.title}
-                  class={link.highlight ? "highlight" : null}
+                  className={link.highlight ? "highlight" : null}
                 >
                   {link.title}
                 </a>

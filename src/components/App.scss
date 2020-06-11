@@ -16,11 +16,10 @@ body {
     font-family: $copy;
     font-weight: 200;
     text-align: center;
-    padding: 2em 0;
     margin: 0 auto;
     min-height: 100vh;
     background-color: $primary;
-    background-image: url("../assets/background.png");
+    // background-image: url("../assets/background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -89,7 +88,7 @@ a {
     text-transform: uppercase;
     color: $black;
     padding: 0.5em 1em;
-    background-color: #FFCBAA90;
+    background-color: $primary;
     border: solid 3px $white;
     border-radius: 7px;
     box-shadow: #00000050 1px 1px 1px;
@@ -108,6 +107,13 @@ a.highlight {
     animation-delay: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: 2;
+}
+
+// Media queries
+@media (max-width: 350px) {
+    body {
+        font-size: 16px;
+    }
 }
 
 // Animations
