@@ -29,7 +29,7 @@ const App = () => {
           <img
             id="icon"
             src={logo}
-            alt='Swallow Timeberworks'
+            alt='Swallow Timberworks'
           />
         </div>
         <div className='links'>
