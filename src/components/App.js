@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import bg from "../assets/bg.mp4";
 import bgImg from "../assets/bg.png";
+import bgWebm from "../assets/bg.webm";
 import logo from "../assets/logo.png";
 import "./App.scss";
 
@@ -35,6 +36,7 @@ const App = () => {
         className='video'
       >
         <source src={bg} type='video/mp4'></source>
+        <source src={bgWebm} type='video/webm'></source>
         <img src={bgImg} />
       </video>
       <section className='container'>
