@@ -27,6 +27,7 @@ const App = () => {
       <section className='container'>
         <div className='logo'>
           <img
+            id="icon"
             src={logo}
             alt='Swallow Timeberworks'
           />

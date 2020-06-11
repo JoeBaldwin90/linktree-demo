@@ -13,7 +13,7 @@ sans-serif;
 
 body {
     max-width: 450px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.1;
     font-family: $copy;
     text-align: center;
@@ -24,12 +24,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-@media (min-width: 425px) {
-    body {
-        background-size: contain
-    };
 }
 
 section.container {
@@ -53,6 +47,7 @@ div.logo {
         animation: grow;
         animation-duration: 1s;
         animation-fill-mode: forwards;
+        width: 100%;
     }
 }
 
@@ -111,6 +106,23 @@ div.handle {
         color: $white;
         text-transform: uppercase;
         margin: 0 auto;
+    }
+}
+
+// Responsive styles
+@media (min-width: 425px) {
+    body {
+        background-size: contain
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        font-size: 14px;
+    }
+
+    img#icon {
+        grid-column: 1 / span 3 !important;
     }
 }
 
