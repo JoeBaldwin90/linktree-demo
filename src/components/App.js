@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import bg from "../assets/bg.png";
+import bg from "../assets/bg.mp4";
+import bgImg from "../assets/bg.png";
+import bgWebm from "../assets/bg.webm";
+import logo from "../assets/logo.png";
 import "./App.scss";
 
 const spaceID = process.env.REACT_APP_SPACE;
@@ -24,12 +27,23 @@ const App = () => {
 
   return (
     <div>
+      <video
+        autoPlay={true}
+        loop={true}
+        muted
+        className='video'
+        poster={bgImg}
+      >
+        >
+        <source
+          src={bg}
+          type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'
+        ></source>
+        <source src={bgWebm} type='video/webm;codecs="vp8, vorbis"'></source>
+      </video>
       <section className='container'>
         <div className='profile-image'>
-          <img className='profile' src="" alt='' />
-        </div>
-        <div className='title'>
-          <h1>Page Title</h1>
+          <img className='profile' src={logo} alt='Nitara' />
         </div>
         <div className='links'>
           <ul>
