@@ -26,12 +26,12 @@ const App = () => {
     <div>
       <section className='container'>
         <div className='logo'>
-          <img src={logo} className='Logo' alt="Pippa Rose Logo"/>
+          <img src={logo} className='Logo' alt='Pippa Rose Logo' />
         </div>
         <div className='links'>
           <ul>
-            {data.map((link) => (
-              <li>
+            {data.map((link, i) => (
+              <li key={i}>
                 <a
                   href={link.url}
                   alt={link.title}
@@ -39,7 +39,6 @@ const App = () => {
                 >
                   {link.title}
                 </a>
-                <div className='blur'></div>
               </li>
             ))}
           </ul>
