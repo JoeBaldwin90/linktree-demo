@@ -39,6 +39,7 @@ const App = () => {
                 >
                   {link.title}
                 </a>
+                <div className='blur'></div>
               </li>
             ))}
           </ul>
