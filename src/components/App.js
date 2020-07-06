@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-import logo from "../assets/logo.png";
+import logo from "../assets/clo-logo.svg";
+import arrow from "../assets/arrow.png";
+import { SiteLink } from "./SiteLink";
 import "./App.scss";
 
 const spaceID = process.env.REACT_APP_SPACE;
@@ -23,29 +25,28 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <Fragment>
+      <img src={logo} className='logo' alt='Clo Studio Logo' />
       <section className='container'>
-        <div className='logo'>
-          <img src={logo} className='Logo' alt='Pippa Rose Logo' />
-        </div>
         <div className='links'>
           <ul>
             {data.map((link, i) => (
               <li key={i}>
-                <a
-                  href={link.url}
-                  alt={link.title}
-                  className={link.highlight ? "highlight" : null}
+                <img src={arrow} className='arrow' alt='Arrow' />
+                <SiteLink
+                  url={link.url}
+                  alt={link.title + " Link"}
+                  highlight={link.highlight ? "highlight" : null}
+                  index={(i + 1) * 100}
                 >
                   {link.title}
-                </a>
-                <div className='blur'></div>
+                </SiteLink>
               </li>
             ))}
           </ul>
         </div>
       </section>
-    </div>
+    </Fragment>
   );
 };
 

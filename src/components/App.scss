@@ -1,148 +1,80 @@
 // Colors  
 $black: #111111;
 $white: #FFFFFF;
-$primary: #FFCBAA;
-$primaryHighlight: #FDE1D0;
+$primary: #F7F0E7;
+// $primaryHighlight: #FDE1D0;
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital@0;1&display=swap');
 // $title: 'Sarina', cursive;
-$copy: 'Roboto',
+$copy: 'Karla',
 sans-serif;
 
 body {
-    max-width: 450px;
-    font-size: 20px;
-    line-height: 1.1;
+    font-size: 16px;
+    line-height: 1;
     font-family: $copy;
-    font-weight: 300;
-    text-align: center;
+    font-weight: 400;
     margin: 0 auto;
     min-height: 100vh;
-    background-color: $white;
-    background-image: url("https://pipparoselifestyle.com/wp-content/uploads/2020/06/Childs-1707-03009-scaled.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -2;
+    width: 100vw;
+    background-color: $primary;
 }
 
 section.container {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-gap: 25vh 5px;
-    grid-auto-flow: dense;
-    padding-top: 5vh;
-    margin: 0 24px;
+    padding: 0 0.5em;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 // Title / Logo
-div.logo {
-    grid-column: 4 / span 6;
-    animation: fadeGrow;
-    opacity: 0;
-    animation-duration: 1.5s;
-    animation-delay: .5s;
-    animation-fill-mode: forwards;
-
-    img {
-        width: 100%;
-    }
+img.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5em;
+    margin: 0 auto;
+    padding: 2em;
+    padding-bottom: 3em;
 }
 
 // Links container
-div.links {
-    grid-column: span 12;
-    opacity: 0;
-    animation: fadeGrow;
-    animation-duration: 1.5s;
-    animation-delay: .5s;
-    animation-fill-mode: forwards;
-}
+// div.links {}
 
 ul,
 li {
     list-style: none;
     margin: 0;
     padding: 0;
-    grid-column: span 12;
 }
 
 li {
-    margin-bottom: 1em;
-    position: relative;
-}
-
-// Glassy button blur
-div.blur {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.2);
-    z-index: -1;
-}
-
-a {
-    display: block;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: $white;
-    padding: 0.5em 1em;
-    border: solid 1px $white;
-    border-radius: 5px;
-    box-shadow: #00000050 1px 1px 1px;
-    z-index: 2;
-
-    &:hover+div.blur,
-    &:active+div.blur,
-    &:focus+div.blur {
-        background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    margin: 0.5em 0;
+    align-items: center;
+    transform: translateX(-3em);
+    transition: transform 1s ease;
+    &:hover {
+        transform: translateX(0em);
     }
 }
 
-// "Highlighted" link styles
-a.highlight {
-    animation: twitch;
-    animation-duration: 250ms;
-    animation-delay: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: 2;
+img.arrow {
+    width: 2.5em;
+    margin-right: 0.5em;
 }
 
+// "Highlighted" link styles
+a.highlight {}
+
 // Animations
-@keyframes fadeGrow {
+@keyframes fadeIn {
     from {
         opacity: 0;
-        transform: scale(0.85)
     }
 
     to {
         opacity: 1;
-        transform: scale(1)
-    }
-}
-
-@keyframes twitch {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    25% {
-        transform: rotate(1deg);
-    }
-
-    50% {
-        transform: rotate(-1deg);
-    }
-
-    75% {
-        transform: rotate(1deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
     }
 }
