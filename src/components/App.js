@@ -28,23 +28,21 @@ const App = () => {
     <Fragment>
       <img src={logo} className='logo' alt='Clo Studio Logo' />
       <section className='container'>
-        <div className='links'>
-          <ul>
-            {data.map((link, i) => (
-              <li key={i}>
-                <img src={arrow} className='arrow' alt='Arrow' />
-                <SiteLink
-                  url={link.url}
-                  alt={link.title + " Link"}
-                  highlight={link.highlight ? "highlight" : null}
-                  index={(i + 1) * 100}
-                >
-                  {link.title}
-                </SiteLink>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul className='links'>
+          {data.map((link, i) => (
+            <li key={i}>
+              <img src={arrow} className='arrow' alt='Arrow' />
+              <SiteLink
+                url={link.url}
+                alt={link.title + " Link"}
+                highlight={link.highlight ? "highlight" : null}
+                index={(i + 1) * 100}
+              >
+                {link.title}
+              </SiteLink>
+            </li>
+          ))}
+        </ul>
       </section>
     </Fragment>
   );
