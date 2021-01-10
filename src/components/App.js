@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from "react";
 import axios from "axios";
-import logo from "../assets/clologo.png";
+import logo from "../assets/clo-logo.svg";
 import arrow from "../assets/arrow.png";
 import { SiteLink } from "./SiteLink";
 import "./App.scss";

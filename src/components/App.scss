@@ -5,13 +5,16 @@ $primary: #F7F0E7;
 // $primaryHighlight: #FDE1D0;
 
 // Fonts
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital@0;1&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Karla:ital@0;1&display=swap');
+@font-face {
+    font-family: 'Whyte-Book';
+    src: local('Whyte-Book'), url(../assets/Whyte-Book.otf) format('opentype');
+}
 // $title: 'Sarina', cursive;
-$copy: 'Karla',
-sans-serif;
+$copy: 'Whyte-Book', sans-serif;
 
 body {
-    font-size: 16px;
+    font-size: 1em;
     line-height: 1;
     font-family: $copy;
     font-weight: 400;
@@ -36,10 +39,9 @@ img.logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 3em;
+    width: 5em;
     margin: 0 auto;
     padding: 2em;
-    padding-bottom: 3em;
 }
 
 ul,
@@ -82,8 +84,17 @@ img.arrow {
 }
 
 // Responsive Styles
-@media (max-width: 365px) {
+@media (max-width: 405px) {
     body {
-        font-size: 14px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 321px) {
+    img.logo {
+        padding: 0.5em;
+    }
+    body {
+        font-size: 0.75em;
     }
 }
