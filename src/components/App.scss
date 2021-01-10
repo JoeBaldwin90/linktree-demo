@@ -36,14 +36,11 @@ img.logo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 5em;
+    width: 3em;
     margin: 0 auto;
     padding: 2em;
     padding-bottom: 3em;
 }
-
-// Links container
-// div.links {}
 
 ul,
 li {
@@ -71,7 +68,7 @@ img.arrow {
 }
 
 // "Highlighted" link styles
-a.highlight {}
+// a.highlight {}
 
 // Animations
 @keyframes fadeIn {
